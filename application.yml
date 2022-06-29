@@ -1,0 +1,28 @@
+spring:
+  jpa:
+    generate-ddl: 'true'
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: 'true'
+        show_sql: 'true'
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+        SQL: DEBUG
+        
+eureka:
+  instance:
+    preferIpAddress: 'true'
+  client:
+    register-with-eureka: 'true'
+    fetch-registry: 'true'
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
